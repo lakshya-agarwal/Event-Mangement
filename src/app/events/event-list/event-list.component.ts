@@ -46,4 +46,9 @@ export class EventListComponent {
       country:"India"
     }
   }]
+
+
+  clickEvent(event:any){
+    console.log(event);
+  }
 }

@@ -1,11 +1,14 @@
 <p class="py-4 px-8 font-bold text-5xl text-yellow-500"> Upcoming Events</p>
 <hr>
-<div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-4">
+<div class="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 p-4">
     <div *ngFor="let event of events" class="bg-violet-200 p-4 rounded shadow-md">
       <h2 class="text-xl font-bold">{{ event.name }}</h2>
       <p>Date: {{ event.date }}</p>
       <p>Time: {{ event.time }}</p>
       <p>Location: {{ event.location.address }}</p>
       <p>Description: {{ event.price }}</p>
+      <button (click)="clickEvent(event)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Click me
+      </button>
     </div>
 </div>
