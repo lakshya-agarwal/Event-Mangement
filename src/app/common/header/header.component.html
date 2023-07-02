@@ -5,8 +5,8 @@
           <a href="#" class="text-white font-bold text-lg"> Home </a>
         </div>
         <div class="flex space-x-4">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >All events</button>
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="togglePopup()">Create Event</button>
+            <button [routerLink]="['/events']" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >All events</button>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" [routerLink]="['/events/new']">Create Event</button>
           <div class="flex items-center space-x-2">
             <span class="text-white">Lakshya</span>
             <img src="user-avatar.jpg" alt="User Avatar" class="w-8 h-8 rounded-full">
@@ -17,33 +17,4 @@
   </nav>
   
 
-  
-<!-- Popup form -->
-<div id="popup" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 hidden">
-    <div class="bg-white p-8 rounded-md">
-      <h2 class="text-2xl font-bold mb-4">Create Event</h2>
-      <form>
-        <div class="mb-4">
-          <label for="event-name" class="block text-gray-700">Event Name</label>
-          <input type="text" id="event-name" class="border-gray-300 border-2 px-4 py-2 rounded w-full" required>
-        </div>
-        <div class="mb-4">
-          <label for="event-date" class="block text-gray-700">Date</label>
-          <input type="date" id="event-date" class="border-gray-300 border-2 px-4 py-2 rounded w-full" required>
-        </div>
-        <div class="mb-4">
-          <label for="event-time" class="block text-gray-700">Time</label>
-          <input type="time" id="event-time" class="border-gray-300 border-2 px-4 py-2 rounded w-full" required>
-        </div>
-        <div class="mb-4">
-          <label for="event-price" class="block text-gray-700">Price</label>
-          <input type="number" id="event-price" class="border-gray-300 border-2 px-4 py-2 rounded w-full" required>
-        </div>
-        <div class="mb-4">
-          <label for="event-location" class="block text-gray-700">Location</label>
-          <input type="text" id="event-location" class="border-gray-300 border-2 px-4 py-2 rounded w-full" required>
-        </div>
-        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create</button>
-      </form>
-    </div>
-  </div>
+ 

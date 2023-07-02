@@ -7,11 +7,4 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-   togglePopup() {
-    console.log("create event");
-    const popup = document.getElementById("popup");
-    if (popup) {
-      popup.classList.toggle("hidden");
-    }
-  }
 }

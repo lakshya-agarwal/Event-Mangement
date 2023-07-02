@@ -1,14 +1,19 @@
 <p class="py-4 px-8 font-bold text-5xl text-yellow-500"> Upcoming Events</p>
 <hr>
-<div class="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 p-4">
-    <div *ngFor="let event of events" class="bg-violet-200 p-4 rounded shadow-md">
+<div class="grid gap-8 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 p-4">
+    <div [routerLink]="['/events', event?.id]" *ngFor="let event of events" class="bg-violet-200 p-4 rounded shadow-md">
       <h2 class="text-xl font-bold">{{ event.name }}</h2>
-      <p>Date: {{ event.date }}</p>
-      <p>Time: {{ event.time }}</p>
-      <p>Location: {{ event.location.address }}</p>
-      <p>Description: {{ event.price }}</p>
-      <button (click)="clickEvent(event)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Click me
+      <p>Date: {{ event?.date }}</p>
+      <p [ngSwitch]="event?.time" >
+        Time: {{ event?.time }}
+        <span *ngSwitchCase="'10.00 AM'">(Late start)</span>
+        <span *ngSwitchCase="'8.00 AM'">(Early start)</span>
+        <span *ngSwitchDefault>(Normal start)</span>
+    </p>
+      <p>Location: {{ event?.location?.address }}</p>
+      <p>Description: {{ event?.price }}</p>
+      <button [routerLink]="['/events', event?.id]" (click)="clickEvent(event)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        View Event
       </button>
     </div>
 </div>
