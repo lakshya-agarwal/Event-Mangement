@@ -1,0 +1,4 @@
+
+.active {
+    @apply text-blue-500; /* Active link color */
+  }

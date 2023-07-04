@@ -12,6 +12,10 @@ const routes: Routes = [
     { path: 'events/new', component: CreateEventComponent , canDeactivate:['canDeactivateCreateEvent']},
     { path: 'events/:id', component: EventDetailsComponent , canActivate:[EventRouteActivatorService]},
     { path: '404', component: Eror404Component },
+    { 
+        path: 'user',
+        loadChildren: () => import("./user/user.module").then(m => m.UserModule)
+    },
   ];
   
 
