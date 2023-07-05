@@ -1,0 +1,46 @@
+<div class="flex justify-center items-center h-screen">
+    <form [formGroup]="loginForm" class="w-full max-w-sm" (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label class="block text-yellow-300 text-sm font-bold mb-2" for="email">
+          Email Address
+        </label>
+        <input
+          formControlName="email"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="email"
+          type="email"
+          placeholder="Enter your email"
+        >
+        <div class="text-red-500" *ngIf="loginForm.get('email')?.invalid && (loginForm?.get('email')?.dirty || loginForm?.get('email')?.touched)">
+          <div >Email is required.</div>
+          <div >Please enter a valid email address.</div>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="block text-yellow-300 text-sm font-bold mb-2" for="password">
+          Password
+        </label>
+        <input
+          formControlName="password"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="password"
+          type="password"
+          placeholder="Enter your password"
+        >
+        
+      </div>
+      <div class="flex items-center justify-between">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+          [disabled]="loginForm.invalid"
+        >
+          Sign In
+        </button>
+        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+          Forgot Password?
+        </a>
+      </div>
+    </form>
+  </div>
+  
