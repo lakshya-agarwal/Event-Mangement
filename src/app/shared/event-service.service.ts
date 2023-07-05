@@ -15,6 +15,11 @@ export class EventServiceService {
   getEvent(id:number){
     return events.filter(event => event.id == id)[0];
   }
+
+  saveEvent(value:any){
+    value.id=1;
+    events.push(value)
+  }
 }
 
 const events =[{

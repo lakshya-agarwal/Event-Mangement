@@ -8,7 +8,8 @@
           <a [routerLink]="['/events']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  class=" text-white font-bold py-2 px-4 rounded" >All events</a>
           <a class="text-white font-bold py-2 px-4 rounded" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}"  [routerLink]="['/events/new']">Create Event</a>
           <div class="flex items-center space-x-2">
-            <span [routerLink]="['/user/profile']" class="text-white">Lakshya</span>
+            <span *ngIf="authService.isAuthenticated()"  [routerLink]="['/user/profile']" class="text-white">Welcome Lakshya</span>
+            <span *ngIf="!authService.isAuthenticated()" [routerLink]="['/user/login']" class="text-white">Login</span>
             <img src="user-avatar.jpg" alt="User Avatar" class="w-8 h-8 rounded-full">
           </div>
         </div>

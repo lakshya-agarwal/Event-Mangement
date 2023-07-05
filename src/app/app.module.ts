@@ -11,6 +11,8 @@ import { EventDetailsComponent } from './events/event-details/event-details.comp
 import { AppRoutingModule } from './app-routing.module';
 import { CreateEventComponent } from './events/create-event/create-event.component';
 import { Eror404Component } from './error/eror404/eror404.component';
+import { AuthService } from './user/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { Eror404Component } from './error/eror404/eror404.component';
     BrowserModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
     ],
   providers: [EventServiceService,
     provideToastr({
@@ -36,7 +40,8 @@ import { Eror404Component } from './error/eror404/eror404.component';
     {
       provide:'canDeactivateCreateEvent',
       useValue:ckeckDirtyState
-    }
+    },
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
